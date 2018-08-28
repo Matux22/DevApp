@@ -1,6 +1,8 @@
-<script>
-const leVers;
+function monVers(params) {
+    
+}
 
 
 
-</script>
+
+
