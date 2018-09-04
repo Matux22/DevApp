@@ -1,0 +1,11 @@
+#terrain {
+height: 85vh;
+width: 100vw;
+padding: 10px;
+position: relative;
+}
+
+#teteTaupe {
+    height : 59px;
+    position: absolute;
+}
