@@ -1,5 +1,5 @@
 let dimensionTerrain;
-
+let clicks = 0;
 
 //Définir la dimension du terrain
 function init() {
@@ -7,26 +7,38 @@ function init() {
 }
 
 //Définir la déplacement de la tête sur le terrain
-function mouvementTete() {
-    const positionTete = document.getElementById("teteTaupe");
-    positionTete.style.top = Math.random() * dimensionTerrain.height + "px";
-    positionTete.style.left = Math.random() * dimensionTerrain.width + "px";
+function positionTete() {
+    const placeTete = document.getElementById("teteTaupe");
+    placeTete.style.top = Math.random() * dimensionTerrain.height + "px";
+    placeTete.style.left = Math.random() * dimensionTerrain.width + "px";
 }
 
 //Déplacer la tête quand on clique dessus
 function tapeTete() {
-    document.getElementById("teteTaupe").onclick = mouvementTete;
-    console.log(dimensionTerrain);
+    document.getElementById("teteTaupe").onclick = positionTete;
+}
+
+//Compter le nombre de clics
+function compteClic() {
+    clicks++;
+    console.log(clicks);
+}
+
+//Avoir un compte à rebour entre chaque changement de position
+function timer() {
+    setTimeout(positionTete, 5000);
+    //setInterval(function () { document.getElementById("teteTaupe").click(); }, 5000);
+    console.log("Yes");
 }
 
 window.onload = function () {
     init();
-    mouvementTete();
+    positionTete();
     tapeTete();
+    //timer();
 }
 
-
-
-
-
-
+//window.onclick = function () {
+  //  compteClic();
+//}
+    //enchainementTete();
